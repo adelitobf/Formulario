@@ -16,12 +16,12 @@ public class FormularioFachada {
 
 	public void gerarFormulario(){
 		Formulario formulario = new Formulario();
-		formulario.
+		formulario.gerar();
 	}
 
 	public void listarCadastro() {
 		Formulario formulario = new Formulario();
-		formulario.listarCampo();
+		formulario.listarCampo(campo);
 	}
 
 	public void salvarValorCampo(String valor){

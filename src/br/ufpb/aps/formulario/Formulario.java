@@ -21,7 +21,16 @@ public class Formulario {
 	
 	public Campo listarCampo(Campo campo){
 		for(int i =0;i < listaCampos.length; i++ ){
-			
+			//TODO
 		}
 	}
+
+	public void gerar() {
+		
+		
+	}
+	
+	
+	
+	
 }

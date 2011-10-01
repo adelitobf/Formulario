@@ -14,8 +14,9 @@ public class FormularioFachada {
 		this.listaCampo = new LinkedList<String>();
 	}
 
-	public void gerarFormulario(String nome, String id){
+	public void gerarFormulario(){
 		Formulario formulario = new Formulario();
+		formulario.
 	}
 
 	public void listarCadastro() {
@@ -24,7 +25,8 @@ public class FormularioFachada {
 	}
 
 	public void salvarValorCampo(String valor){
-		this.formulario.adcionarCampo(valor);
+		Formulario formulario = new Formulario();
+		formulario.adcionarCampo(valor);
 	}
 
 }

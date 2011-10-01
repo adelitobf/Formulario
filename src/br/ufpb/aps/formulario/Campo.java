@@ -4,22 +4,31 @@ public class Campo {
 	private Validador validador;
 	private String label;
 	private String valor;
-	private String id;
+
 	
 	
 	public Campo(String label, String id){
 		this.label = label;
-		this.id = id;
+		this.valor = "";
+		
 	}
-	
-	
+		
 	public boolean validar() throws ValorIncompativelException{
 		try{
-			validador.validar(this.valor);
-			return true;
+			if (this.label == "Nome"){
+				validador = new ValidadorTexto();
+				validar();
+			}
+			if(this.label =="Email"){
+				validador = new ValidadorEmail();
+				validar();
+			}else{
+				validador = new ValidadorNumero();
+				validar();
+			}
 		}catch(ValorIncompativelException erro){
 			throw new ValorIncompativelException(erro.getMessage());
 		}
+		return false;
 	}
-
 }

@@ -22,7 +22,7 @@ public class Main {
 			
 			switch(aux){
 			case 1:
-			f.gerarFormulario(valor);
+			f.gerarFormulario(valor, valor);
 			System.out.println("---- Cadastro de Usuario ----");
 			System.out.println("Nome:  ");
 			valor = scanner.nextLine();

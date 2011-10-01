@@ -6,7 +6,7 @@ public class ValidadorTexto implements Validador{
 
 	private int max;
 
-	public ValidadorTexto(int max){
+	public ValidadorTexto(){
 		this.max = 30;
 	}
 

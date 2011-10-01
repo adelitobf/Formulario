@@ -19,7 +19,9 @@ public class Formulario {
 		this.listaCampos.add(campo);
 	}
 	
-	public void listarCampo(){
-		
+	public Campo listarCampo(Campo campo){
+		for(int i =0;i < listaCampos.length; i++ ){
+			
+		}
 	}
 }

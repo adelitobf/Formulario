@@ -1,5 +1,6 @@
 package br.ufpb.aps.formulario01;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 
 
@@ -22,52 +23,56 @@ public class Main {
 			System.out.println(" [0] Sair");
 			System.out.println();
 
-			aux = scanner.nextInt();
+			aux = Integer.parseInt(scanner.nextLine());
 
 			String condicional = "C";
-			while(condicional.equals("C")){
+			while(condicional.toUpperCase().equals("C")){
 
 				switch(aux){
 
 				case 1:
 					campo = new Campo();
+					try{
+						System.out.println("---- Cadastro de Usuario ----");
+						System.out.println("Nome:  ");
+						dado = scanner.nextLine();
+						campo.validarCampo(dado, new ValidadorTexto());
+						campo.setDado(dado);
+						fachada.salvarDadoCampo(campo);
 
-					System.out.println("---- Cadastro de Usuario ----");
-					System.out.println("Nome:  ");
-					dado = scanner.nextLine();
-					campo.validarCampo(dado, new ValidadorTexto());
-					campo.setDado(dado);
-					
-//					System.out.println("Email:  ");
-//					dado = scanner.nextLine();
-//					campo.validarCampo(dado, new ValidadorEmail());
-//					campo.setDado(dado);
-//					
-//					System.out.println("Email:  ");
-//					dado = scanner.nextLine();
-//					campo.validarCampo(dado, new ValidadorIdade());
-//					campo.setDado(dado);
-					
+						campo = new Campo();
+						System.out.println("Email:  ");
+						dado = scanner.nextLine();
+						campo.validarCampo(dado, new ValidadorEmail());
+						campo.setDado(dado);
+						fachada.salvarDadoCampo(campo);
 
+						campo = new Campo();
+						System.out.println("Idade:  ");
+						dado = scanner.nextLine();
+						campo.validarCampo(dado, new ValidadorIdade());
+						campo.setDado(dado);
+						fachada.salvarDadoCampo(campo);
+					}catch(ValorIncompativelException e){
+						System.out.println(e.getMessage());
+					}
 					break;
 
 				case 2:
+
 					System.out.println("---- Listar cadastros ----");
 					fachada.listarFormulario();
 					System.out.println(">Fim");
-					System.out.println("[C]ontinua ou [F]inaliza?");
-					condicional = scanner.nextLine();
 					break;
-					
+
 
 				}//fim switch
 
 				System.out.println("[C]ontinua ou [F]inaliza?");
-				condicional = scanner.next();
-				System.out.println("Ate Logo!");
+				condicional = scanner.nextLine();
 
-
-			}//fim while
+			}//fim while	
+			System.out.println("Ate Logo!");
 		}//fim main
 	}
 }

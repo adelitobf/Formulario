@@ -1,6 +1,7 @@
 package br.ufpb.aps.formulario01;
 
 public class Campo {
+	
 	private String dado;
 
 	public boolean validarCampo(String dadoEntrada, Validador validador) throws ValorIncompativelException{
@@ -17,6 +18,4 @@ public class Campo {
 		this.dado = dado;
 		
 	}
-	
-	
 }

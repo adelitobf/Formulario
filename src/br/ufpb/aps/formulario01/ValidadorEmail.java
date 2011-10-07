@@ -9,12 +9,9 @@ public class ValidadorEmail implements Validador {
 	}
 	
 	@Override
-	public boolean validar(String valorValidar) throws ValorIncompativelException {
-		//Verifica se existe o caracter "@" na String passada
-		
-		//lembrar de valaidar para numeros tb
-		if(!valorValidar.contains(arroba)){
-			throw new ValorIncompativelException("Email invalido");
+	public boolean validar(String dadoValidar) throws ValorIncompativelException {
+		if(!dadoValidar.contains(arroba)){
+			throw new ValorIncompativelException("Email invalido. Favor digitar novamente!");
 		}
 		return true;
 	}

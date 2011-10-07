@@ -14,16 +14,16 @@ public class ValidadorIdade  implements Validador{
 	public boolean validar(String dado) throws ValorIncompativelException {
 
 		try{
-			int valorValidar = Integer.parseInt(dado);
+			int dadoValidar = Integer.parseInt(dado);
 
-			if(valorValidar < min){
-				throw new ValorIncompativelException ("valor menor que "+min);
+			if(dadoValidar < min){
+				throw new ValorIncompativelException ("Valor menor que "+min+". Favor digitar novamente!");
 
-			}if(valorValidar > max){
-				throw new ValorIncompativelException ("valor maior que "+max);
+			}if(dadoValidar > max){
+				throw new ValorIncompativelException ("Valor maior que "+max+". Favor digitar novamente!");
 			}
 		}catch(NumberFormatException e){
-			throw new ValorIncompativelException ("valor nao eh um inteiro");
+			throw new ValorIncompativelException ("Valor nao eh um inteiro. Favor digitar novamente!");
 		}
 		return true;
 	}
